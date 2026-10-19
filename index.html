@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Нуржигит & Айниса — Той чакыруу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Marck+Script&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fffaf5;--card:#ffffff;--ink:#4a3a35;--soft:#85726a;--gold:#c49a52;--rose:#c0707a;--line:#f0dfd0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;line-height:1.6;overflow-x:hidden;background-image:radial-gradient(circle at 8% 15%,#fde8e4 0,transparent 35%),radial-gradient(circle at 92% 65%,#f6ebd3 0,transparent 35%)}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0}
+section{padding:72px 20px;max-width:760px;margin:0 auto;text-align:center}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-start;padding-top:max(96px,13vh);padding-top:max(96px,13svh);align-items:center;position:relative;overflow:hidden;max-width:none;background:linear-gradient(180deg,#fff 0,#fff1ec 55%,var(--bg) 100%)}
+.frame{position:absolute;top:18px;bottom:18px;left:50%;width:min(92vw,540px);transform:translateX(-50%);border:1px solid var(--gold);border-radius:270px 270px 24px 24px;opacity:.7;pointer-events:none}
+.frame:after{content:"";position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid var(--line);border-radius:inherit}
+.eyebrow{letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;color:var(--gold)}
+.names{font-family:'Marck Script','Segoe Script',cursive;font-weight:400;font-size:clamp(3.2rem,15vw,6.8rem);color:#a24456;margin:18px 0;line-height:1.15;text-shadow:0 0 22px rgba(255,255,255,.9),0 3px 10px rgba(162,68,86,.25)}
+.names span{display:block;font-size:.45em;color:var(--gold);font-style:italic;margin:4px 0}
+.date{font-size:1.15rem;color:var(--soft)}
+.scroll{position:absolute;bottom:26px;color:var(--gold);font-size:1.6rem;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(10px)}}
+.scene{position:absolute;top:0;left:0;width:100%;height:100%}
+.hero .eyebrow,.hero .names,.hero .date{position:relative;z-index:2}
+.hero .eyebrow{color:#9c6f2a}
+.hero .date{color:var(--ink);text-shadow:0 1px 10px #fff}
+.hero .scroll{z-index:2}
+.rings{height:118vh;position:relative;background:linear-gradient(180deg,rgba(253,227,208,0) 0,#fde3d0 30%,#f8c4a0 55%,#f9d3b8 82%,var(--bg) 100%)}
+.rtext p{color:var(--ink)}
+.stick{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 16px;text-align:center;background:radial-gradient(circle at 50% 95%,rgba(255,214,150,.75),transparent 50%)}
+.rsvg{width:min(94vw,540px);height:auto;overflow:visible}
+.rtext{margin-top:10px}
+.js .rtext{opacity:0}
+.rtext h2{font-size:clamp(1.8rem,7vw,2.6rem)}
+
+.splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 85%,rgba(255,226,160,.9),transparent 55%),linear-gradient(180deg,#fff3ea,#fbcfae 70%,#f6a87e);transition:opacity .9s,visibility .9s}
+.splash.out{opacity:0;visibility:hidden}
+.splash .eyebrow{color:#9c6f2a}
+.splash .names{font-size:clamp(3rem,15vw,5.8rem);margin:10px 0}
+body.lock{overflow:hidden}
+.hint{margin-top:22px;color:#7a4a2a;font-size:1rem;letter-spacing:.04em;opacity:0;transition:opacity .6s;animation:bob 1.8s infinite}
+.mushint{position:fixed;top:calc(env(safe-area-inset-top,0px) + 20px);right:66px;z-index:50;background:rgba(255,255,255,.92);color:#9c6f2a;border:1px solid var(--gold);border-radius:999px;padding:6px 14px;font-size:.95rem;opacity:0;transition:opacity .5s;pointer-events:none}
+
+.nojs{display:none;font-size:1.3rem;color:var(--rose);margin-top:18px}
+html:not(.js) .cd{display:none}
+html:not(.js) .nojs{display:block}
+html:not(.js) .rv{animation:up 1s ease both}
+html:not(.js) .dlay1{animation-delay:.25s}
+html:not(.js) .dlay2{animation-delay:.5s}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+html:not(.js) #rL,html:not(.js) #rLt{animation:rl 4s ease-in-out infinite alternate}
+html:not(.js) #rR{animation:rr 4s ease-in-out infinite alternate}
+html:not(.js) #hrt{animation:hf 4s ease-in-out infinite alternate}
+@keyframes rl{from{transform:translate(40px,170px)}to{transform:translate(162px,170px)}}
+@keyframes rr{from{transform:translate(360px,170px)}to{transform:translate(238px,170px)}}
+@keyframes hf{0%,60%{opacity:0}100%{opacity:1}}
+.calh{font-size:1.4rem;letter-spacing:.3em;color:var(--rose);margin:10px 0 8px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px 2px;max-width:340px;margin:0 auto;font-size:1.05rem}
+.cg b{color:#9c6f2a;font-weight:500;font-size:.9rem}
+.cg i{font-style:normal;color:var(--ink);line-height:2.1}
+.cg i.on{background:radial-gradient(circle,#d9606f 62%,transparent 64%);color:#fff;font-weight:600}
+.mus{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:rgba(255,255,255,.9);color:#9c6f2a;font-size:1.4rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;padding:0}
+.mus.on{animation:pulse 2s infinite}
+.mus:not(.on):after{content:"";position:absolute;width:26px;height:2px;background:#9c6f2a;transform:rotate(-45deg)}
+@keyframes pulse{50%{box-shadow:0 0 0 10px rgba(196,154,82,.18)}}
+.petal{position:absolute;top:-30px;width:12px;height:16px;background:var(--rose);opacity:.4;border-radius:80% 0 80% 0;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.orn{color:var(--gold);letter-spacing:.5em;margin:10px 0 26px}
+h2{font-size:clamp(1.7rem,6vw,2.4rem);color:var(--rose);margin-bottom:14px}
+p{color:var(--soft);font-size:1.08rem;margin:0 0 12px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+.cd div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 4px}
+.cd b{display:block;font-size:clamp(1.6rem,7vw,2.4rem);color:var(--rose);font-weight:400}
+.cd small{color:var(--soft);font-size:.8rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px 22px;box-shadow:0 14px 40px rgba(192,112,122,.14);outline:1px solid var(--line);outline-offset:-9px}
+.big{font-size:2.2rem;color:var(--rose);margin:4px 0}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-size:1.05rem;padding:14px 28px;border-radius:999px;transition:transform .2s,box-shadow .2s;text-decoration:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.15)}
+.gold{background:linear-gradient(135deg,#b9893a,#9c6f2a);color:#fff}
+.rose{background:linear-gradient(135deg,#bd6471,#a9525e);color:#fff}
+.ghost{background:transparent;color:var(--soft);border:1px solid var(--line)}
+input{width:100%;font:inherit;font-size:1.05rem;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);margin:10px 0 18px;text-align:center}
+input:focus{outline:2px solid var(--gold)}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.row .btn{flex:1 1 140px}
+.hide{display:none}
+.msg{font-size:1.25rem;color:var(--rose)}
+.err{color:var(--rose);font-size:.9rem;min-height:1.2em;margin:-8px 0 8px}
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.l{transform:translateX(-40px)}.js .rv.r{transform:translateX(40px)}
+.js .rv.in.l,.js .rv.in.r{transform:none}
+.dlay1{transition-delay:.15s}.dlay2{transition-delay:.3s}
+footer{padding:40px 20px 50px;text-align:center;color:var(--soft);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.petal,.scroll{animation:none}}
+</style>
+<script>document.documentElement.className="js"</script>
+</head>
+<body>
+<button class="mus" id="mus" aria-label="Музыка" title="Музыка">♪</button><div class="mushint" id="mushint">Музыканы жандыруу ♪</div>
+
+<section class="hero" id="top">
+  <svg class="scene" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fde9da"/><stop offset=".45" stop-color="#fbcfae"/><stop offset=".8" stop-color="#f6a87e"/><stop offset="1" stop-color="#f1966f"/></linearGradient>
+<radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fffbe8"/><stop offset=".18" stop-color="#ffe9a8" stop-opacity=".95"/><stop offset=".5" stop-color="#ffc77a" stop-opacity=".35"/><stop offset="1" stop-color="#ffb066" stop-opacity="0"/></radialGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2ab86"/><stop offset=".35" stop-color="#c99a98"/><stop offset="1" stop-color="#6f93a8"/></linearGradient>
+<linearGradient id="wet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a98a"/><stop offset="1" stop-color="#e2c8a2"/></linearGradient>
+<linearGradient id="snd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd3ab"/><stop offset="1" stop-color="#f6e6c6"/></linearGradient>
+<linearGradient id="run" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4ece0"/><stop offset="1" stop-color="#fffdf8"/></linearGradient>
+<radialGradient id="cw"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><radialGradient id="cp2"><stop offset="0" stop-color="#f7a5a0" stop-opacity=".7"/><stop offset="1" stop-color="#f7a5a0" stop-opacity="0"/></radialGradient><radialGradient id="co"><stop offset="0" stop-color="#ffc58f" stop-opacity=".75"/><stop offset="1" stop-color="#ffc58f" stop-opacity="0"/></radialGradient></defs>
+<rect width="1000" height="445" fill="url(#sk)"/>
+<g><ellipse cx="200" cy="170" rx="210" ry="26" fill="url(#cw)"/><ellipse cx="800" cy="130" rx="230" ry="28" fill="url(#cw)"/><ellipse cx="260" cy="330" rx="250" ry="22" fill="url(#cp2)"/><ellipse cx="760" cy="300" rx="270" ry="24" fill="url(#co)"/><ellipse cx="500" cy="385" rx="320" ry="20" fill="url(#co)"/></g>
+<circle cx="500" cy="445" r="230" fill="url(#sun)"/><circle cx="500" cy="445" r="44" fill="#fff3c9"/>
+<rect y="440" width="1000" height="125" fill="url(#sea)"/>
+<g fill="#ffe7a8"><ellipse cx="500" cy="452" rx="40" ry="3" opacity=".9"/><ellipse cx="500" cy="466" rx="62" ry="3.5" opacity=".75"/><ellipse cx="500" cy="482" rx="85" ry="4" opacity=".6"/><ellipse cx="500" cy="500" rx="110" ry="4.5" opacity=".5"/><ellipse cx="500" cy="522" rx="135" ry="5" opacity=".4"/><ellipse cx="500" cy="545" rx="160" ry="5" opacity=".3"/></g>
+<g fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"><path d="M0 470 Q60 466 120 470 T240 470"/><path d="M700 480 Q770 475 840 480 T980 480"/><path d="M60 510 Q140 505 220 510 T380 510"/><path d="M620 520 Q720 514 820 520 T1000 520"/></g>
+<path d="M0 556 Q125 544 250 556 T500 556 T750 556 T1000 556 V572 H0Z" fill="#fff" opacity=".85"/>
+<rect y="566" width="1000" height="22" fill="url(#wet)"/>
+<rect y="580" width="1000" height="120" fill="url(#snd)"/>
+<path d="M0 640 Q150 620 300 650 T520 700 H0Z" fill="#e6cd9f" opacity=".6"/><path d="M1000 630 Q850 615 720 650 T520 700 H1000Z" fill="#e6cd9f" opacity=".6"/>
+<polygon points="474,574 526,574 718,700 282,700" fill="url(#run)" stroke="#d9b36c" stroke-width="2.5"/>
+<polygon points="474,574 526,574 530,700 470,700" fill="#fff" opacity=".25"/>
+<g><ellipse cx="494" cy="575" rx="2.4" ry="1.4" fill="#f2a0aa" opacity=".85" transform="rotate(26 494 575)"/><ellipse cx="498" cy="575" rx="2.4" ry="1.4" fill="#f2a0aa" opacity=".85" transform="rotate(101 498 575)"/><ellipse cx="527" cy="584" rx="2.6" ry="1.5" fill="#f2a0aa" opacity=".85" transform="rotate(23 527 584)"/><ellipse cx="485" cy="584" rx="2.6" ry="1.5" fill="#f2a0aa" opacity=".85" transform="rotate(17 485 584)"/><ellipse cx="455" cy="593" rx="2.8" ry="1.6" fill="#f2a0aa" opacity=".85" transform="rotate(140 455 593)"/><ellipse cx="504" cy="593" rx="2.8" ry="1.6" fill="#f2a0aa" opacity=".85" transform="rotate(74 504 593)"/><ellipse cx="543" cy="602" rx="3.0" ry="1.7" fill="#f2a0aa" opacity=".85" transform="rotate(15 543 602)"/><ellipse cx="538" cy="602" rx="3.0" ry="1.7" fill="#f2a0aa" opacity=".85" transform="rotate(56 538 602)"/><ellipse cx="561" cy="611" rx="3.3" ry="1.8" fill="#f2a0aa" opacity=".85" transform="rotate(92 561 611)"/><ellipse cx="565" cy="611" rx="3.3" ry="1.8" fill="#f2a0aa" opacity=".85" transform="rotate(70 565 611)"/><ellipse cx="460" cy="620" rx="3.5" ry="1.9" fill="#f2a0aa" opacity=".85" transform="rotate(67 460 620)"/><ellipse cx="443" cy="620" rx="3.5" ry="1.9" fill="#f2a0aa" opacity=".85" transform="rotate(54 443 620)"/><ellipse cx="409" cy="629" rx="3.7" ry="2.1" fill="#f2a0aa" opacity=".85" transform="rotate(66 409 629)"/><ellipse cx="567" cy="629" rx="3.7" ry="2.1" fill="#f2a0aa" opacity=".85" transform="rotate(69 567 629)"/><ellipse cx="439" cy="638" rx="4.0" ry="2.2" fill="#f2a0aa" opacity=".85" transform="rotate(79 439 638)"/><ellipse cx="432" cy="638" rx="4.0" ry="2.2" fill="#f2a0aa" opacity=".85" transform="rotate(74 432 638)"/><ellipse cx="538" cy="647" rx="4.2" ry="2.3" fill="#f2a0aa" opacity=".85" transform="rotate(95 538 647)"/><ellipse cx="600" cy="647" rx="4.2" ry="2.3" fill="#f2a0aa" opacity=".85" transform="rotate(22 600 647)"/><ellipse cx="537" cy="656" rx="4.4" ry="2.4" fill="#f2a0aa" opacity=".85" transform="rotate(129 537 656)"/><ellipse cx="563" cy="656" rx="4.4" ry="2.4" fill="#f2a0aa" opacity=".85" transform="rotate(63 563 656)"/><ellipse cx="444" cy="665" rx="4.6" ry="2.5" fill="#f2a0aa" opacity=".85" transform="rotate(121 444 665)"/><ellipse cx="479" cy="665" rx="4.6" ry="2.5" fill="#f2a0aa" opacity=".85" transform="rotate(71 479 665)"/><ellipse cx="385" cy="674" rx="4.8" ry="2.6" fill="#f2a0aa" opacity=".85" transform="rotate(76 385 674)"/><ellipse cx="620" cy="674" rx="4.8" ry="2.6" fill="#f2a0aa" opacity=".85" transform="rotate(1 620 674)"/><ellipse cx="476" cy="683" rx="5.1" ry="2.7" fill="#f2a0aa" opacity=".85" transform="rotate(180 476 683)"/><ellipse cx="620" cy="683" rx="5.1" ry="2.7" fill="#f2a0aa" opacity=".85" transform="rotate(79 620 683)"/><ellipse cx="575" cy="692" rx="5.3" ry="2.8" fill="#f2a0aa" opacity=".85" transform="rotate(105 575 692)"/><ellipse cx="414" cy="692" rx="5.3" ry="2.8" fill="#f2a0aa" opacity=".85" transform="rotate(108 414 692)"/></g>
+<g><rect x="418" y="590" width="16" height="22" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="418" y="599" width="16" height="3" fill="#e3c9a0"/><rect x="566" y="590" width="16" height="22" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="566" y="599" width="16" height="3" fill="#e3c9a0"/><rect x="380" y="615" width="22" height="30" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="380" y="628" width="22" height="3" fill="#e3c9a0"/><rect x="598" y="615" width="22" height="30" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="598" y="628" width="22" height="3" fill="#e3c9a0"/><rect x="322" y="650" width="30" height="40" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="322" y="668" width="30" height="3" fill="#e3c9a0"/><rect x="648" y="650" width="30" height="40" rx="3" fill="#fff" stroke="#e3c9a0"/><rect x="648" y="668" width="30" height="3" fill="#e3c9a0"/></g>
+<g fill="none" stroke="#fff" stroke-linecap="round"><path d="M440 560 V490 A60 60 0 0 1 560 490 V560" stroke-width="7"/><path d="M440 560 V490 A60 60 0 0 1 560 490 V560" stroke="#e3c9a0" stroke-width="1.5"/><path d="M446 500 Q470 540 460 575 M554 500 Q530 540 540 575" stroke-width="5" opacity=".55"/></g>
+<g><ellipse cx="430" cy="546" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(-30 430 546)"/><ellipse cx="452" cy="540" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(30 452 540)"/><ellipse cx="436" cy="508" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(-40 436 508)"/><ellipse cx="452" cy="494" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(20 452 494)"/><ellipse cx="570" cy="546" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(30 570 546)"/><ellipse cx="548" cy="540" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(-30 548 540)"/><ellipse cx="564" cy="508" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(40 564 508)"/><ellipse cx="548" cy="494" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(-20 548 494)"/><ellipse cx="470" cy="448" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(-50 470 448)"/><ellipse cx="530" cy="448" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(50 530 448)"/><ellipse cx="500" cy="424" rx="9" ry="3.5" fill="#6f8a5a" transform="rotate(0 500 424)"/><circle cx="440" cy="552" r="9" fill="#fff"/><circle cx="432" cy="540" r="8" fill="#f7c1c8"/><circle cx="446" cy="530" r="7" fill="#fff"/><circle cx="438" cy="516" r="8" fill="#f2a0aa"/><circle cx="444" cy="500" r="7" fill="#fff"/><circle cx="560" cy="552" r="9" fill="#fff"/><circle cx="568" cy="540" r="8" fill="#f7c1c8"/><circle cx="554" cy="530" r="7" fill="#fff"/><circle cx="562" cy="516" r="8" fill="#f2a0aa"/><circle cx="556" cy="500" r="7" fill="#fff"/><circle cx="448" cy="486" r="7" fill="#f7c1c8"/><circle cx="462" cy="458" r="7" fill="#fff"/><circle cx="480" cy="440" r="8" fill="#f2a0aa"/><circle cx="500" cy="432" r="8" fill="#fff"/><circle cx="520" cy="440" r="8" fill="#f7c1c8"/><circle cx="538" cy="458" r="7" fill="#f2a0aa"/><circle cx="552" cy="486" r="7" fill="#fff"/></g>
+<g fill="none" stroke="#5d4a42" stroke-width="2" stroke-linecap="round"><path d="M300 210 q10 -10 20 0 q10 -10 20 0"/><path d="M680 180 q8 -8 16 0 q8 -8 16 0"/><path d="M730 230 q6 -6 12 0 q6 -6 12 0"/></g>
+</svg><div id="petals"></div><div class="frame"></div>
+  <div class="eyebrow rv">Той чакыруу</div>
+  <h1 class="names rv dlay1">Нуржигит<span>&amp;</span>Айниса</h1>
+  <div class="date rv dlay2" id="dateText">4 ноябрь 2026-ж. · саат 17:00</div>
+  <div class="scroll">⌄</div>
+</section>
+
+<section>
+  <div class="orn rv">❦ ❦ ❦</div>
+  <h2 class="rv">Биздин тойго кош келиңиздер!</h2>
+  <p class="rv dlay1">Кымбаттуу туугандар, дос-жарандар, кошуналар! Биз, Алтынбек жана Акбермет, балдарыбыз Нуржигит менен Айнисанын үйлөнүү тоюна сиздерди чын жүрөктөн чакырабыз.</p>
+  <p class="rv dlay2">Жаш жубайлардын бактылуу күнүн биз менен бирге тосуп, батаңызды берип, кубанычыбызга ортоктош болууңузду өтүнөбүз.</p>
+</section>
+
+<div class="rings" id="rings"><div class="stick">
+<svg class="rsvg" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeab0"/><stop offset=".3" stop-color="#e2b861"/><stop offset=".55" stop-color="#a9772a"/><stop offset=".8" stop-color="#e9c777"/><stop offset="1" stop-color="#8a5f1f"/></linearGradient>
+<linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#cfe6f5"/><stop offset="1" stop-color="#8fb9d6"/></linearGradient>
+<linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2788a"/><stop offset="1" stop-color="#b8283f"/></linearGradient>
+<filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#5b3a10" flood-opacity=".4"/></filter>
+<clipPath id="cp"><rect x="0" y="-90" width="90" height="90"/></clipPath></defs>
+<g id="rL" transform="translate(162 170)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/><g transform="translate(0 -70)"><path d="M-6 6 L6 6 L10 -4 L-10 -4Z" fill="#a97a2c"/><path d="M-11 -4 L-6 -14 L6 -14 L11 -4 L0 14Z" fill="url(#gm)" stroke="#9fc4de" stroke-width=".8"/><path d="M-6 -14 L-2 -4 L0 14 L2 -4 L6 -14 M-11 -4 L11 -4" fill="none" stroke="#fff" stroke-width=".7" opacity=".9"/></g></g><g id="rR" transform="translate(238 170)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/></g><g id="rLt" transform="translate(162 170)"><g clip-path="url(#cp)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/></g></g>
+<g id="hrt" transform="translate(200 58) scale(1.7)"><path d="M0 12 C-30 -12 -26 -38 -10 -38 C-4 -38 0 -32 0 -28 C0 -32 4 -38 10 -38 C26 -38 30 -12 0 12Z" fill="url(#hg)"/><path d="M-17 -30 C-22 -24 -21 -16 -16 -12" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+<div class="rtext" id="rtext"><h2>Эки жүрөк — бир жашоо</h2><p>Бирге бактыбыз, сиздер менен дагы бактылуу болууну каалайбыз</p></div><div class="hint" id="hint">Улантуу үчүн төмөн жылдырыңыз ↓</div>
+</div></div>
+
+<section>
+  <h2 class="rv">Тойго чейин</h2>
+  <div class="cd rv dlay1">
+    <div><b id="d">0</b><small>күн</small></div>
+    <div><b id="h">0</b><small>саат</small></div>
+    <div><b id="m">0</b><small>мүнөт</small></div>
+    <div><b id="s">0</b><small>секунд</small></div>
+  </div>
+  <p class="nojs">Той 4-ноябрда, саат 17:00до болот ♥</p>
+</section>
+
+<section>
+  <h2 class="rv">Той салтанаты</h2>
+  <div class="card rv">
+    <p>2026-жылдын 4-ноябрында,<br>саат 17:00дө башталат</p>
+    <div class="calh">НОЯБРЬ</div>
+    <div class="cg"><b>дш</b><b>шш</b><b>шр</b><b>бш</b><b>жм</b><b>иш</b><b>жк</b><i></i><i></i><i></i><i></i><i></i><i></i><i>1</i><i>2</i><i>3</i><i class="on">4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>17</i><i>18</i><i>19</i><i>20</i><i>21</i><i>22</i><i>23</i><i>24</i><i>25</i><i>26</i><i>27</i><i>28</i><i>29</i><i>30</i></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="rv">Той болуучу жер</h2>
+  <div class="card rv l">
+    <p>Убактысы</p>
+    <div class="big">саат 17:00</div>
+    <p style="margin-top:18px">Ресторан</p>
+    <div class="big">«Олигарх» рестораны</div>
+    <p>Ош шаары</p>
+    <a class="btn gold" style="margin-top:12px" href="https://maps.app.goo.gl/fiRg5Hi1X86agWhW9" target="_blank" rel="noopener">📍 Картадан көрүү</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="rv">Той ээлери</h2>
+  <div class="card rv r">
+    <div class="big">Алтынбек</div>
+    <div class="orn" style="margin:4px 0">&amp;</div>
+    <div class="big">Акбермет</div>
+  </div>
+</section>
+
+<footer>Сиздерди тойдо күтөбүз! ♥<br>Нуржигит &amp; Айниса<br>Ата-энелери: Алтынбек &amp; Акбермет</footer>
+
+<script>
+// ДАТАНЫ ОШОНДО ӨЗГӨРТҮҢҮЗ (жыл-ай-күн):
+var WEDDING = new Date("2026-11-04T17:00:00");
+
+var months=["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"];
+document.getElementById("dateText").textContent =
+  WEDDING.getDate()+" "+months[WEDDING.getMonth()]+" "+WEDDING.getFullYear()+"-ж. · саат 17:00";
+
+function tick(){
+  var t=Math.max(0,WEDDING-new Date());
+  document.getElementById("d").textContent=Math.floor(t/864e5);
+  document.getElementById("h").textContent=Math.floor(t%864e5/36e5);
+  document.getElementById("m").textContent=Math.floor(t%36e5/6e4);
+  document.getElementById("s").textContent=Math.floor(t%6e4/1e3);
+}
+tick(); setInterval(tick,1000);
+
+// scroll animation
+var io=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1}):{observe:function(e){e.classList.add("in")},unobserve:function(){}};
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll(".rv").forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add("in")})},2500);
+
+// petals
+var pw=document.getElementById("petals");
+for(var i=0;i<10;i++){var p=document.createElement("div");p.className="petal";
+  p.style.left=Math.random()*100+"%";p.style.animationDuration=(8+Math.random()*8)+"s";
+  p.style.animationDelay=(-Math.random()*12)+"s";pw.appendChild(p)}
+
+// rings
+try{(function(){
+  var g=function(i){return document.getElementById(i)};
+  var box=g("rings"),L=g("rL"),Lt=g("rLt"),R=g("rR"),H=g("hrt"),T=g("rtext"),K=g("hint"),hs=0;
+  var run=false;
+  function frame(){
+    if(!run)return;
+    var r=box.getBoundingClientRect(),vh=innerHeight;
+    var q=Math.min(1,Math.max(0,(vh-r.top)/(vh*.95)));
+    var e=1-Math.pow(1-q,3),d=150-112*e,rot=(1-e)*70;
+    var tl="translate("+(200-d)+" 170) rotate("+(-rot)+")";
+    L.setAttribute("transform",tl);Lt.setAttribute("transform",tl);
+    R.setAttribute("transform","translate("+(200+d)+" 170) rotate("+rot+")");
+    hs+=((q>=.97?1:0)-hs)*.07;
+    var b=1+.07*Math.sin(Date.now()/280);
+    H.setAttribute("transform","translate(200 58) scale("+(hs*1.7*b)+")");
+    H.setAttribute("opacity",Math.min(1,hs*1.4));
+    T.style.opacity=hs;T.style.transform="translateY("+((1-hs)*20)+"px)";
+    K.style.opacity=hs>.8?1:0;
+    requestAnimationFrame(frame);
+  }
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!run){run=true;frame()}else if(!v){run=false}},{rootMargin:"60px"}).observe(box)}else{run=true;frame()}
+})()}catch(e){}
+
+// music: violin, Pachelbel's Canon in D (public domain), synthesized in the browser
+try{(function(){
+  var btn=document.getElementById("mus"),ctx,master,playing=false,timer,bar=0,stopped=false;
+  var D=[293.66,369.99,440,587.33],A=[277.18,329.63,440,554.37],B=[293.66,369.99,493.88,587.33],F=[277.18,369.99,440,554.37],G=[293.66,392,493.88,587.33];
+  var ch=[D,A,B,F,G,D,G,A],bs=[146.83,110,123.47,92.5,98,146.83,98,110];
+  var mel=[739.99,659.26,587.33,554.37,493.88,440,493.88,554.37];
+  var run=[[739.99,659.26,587.33,739.99],[659.26,554.37,659.26,554.37],[587.33,493.88,587.33,739.99],[554.37,440,554.37,739.99],[493.88,587.33,783.99,587.33],[440,554.37,739.99,554.37],[493.88,587.33,493.88,783.99],[554.37,659.26,880,659.26]];
+  var C=2.2,pat=[0,2,1,3,0,2,1,3];
+  var SONG_START=0; // секунда, с которой начинать песню (assets/song.mp3)
+  var song=null,songBad=false;
+  try{song=new Audio("assets/song.mp3");song.loop=true;song.preload="auto";
+    song.addEventListener("error",function(){songBad=true;if(playing){playing=false;btn.classList.remove("on");start()}});
+    song.addEventListener("loadedmetadata",function(){try{song.currentTime=SONG_START}catch(e){}})}catch(e){}
+  function init(){
+    ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain();master.gain.value=.3;
+    var dl=ctx.createDelay(1),fb=ctx.createGain(),wet=ctx.createGain();
+    dl.delayTime.value=.32;fb.gain.value=.42;wet.gain.value=.55;
+    master.connect(ctx.destination);master.connect(dl);dl.connect(fb);fb.connect(dl);dl.connect(wet);wet.connect(ctx.destination);
+  }
+  function harp(f,t,d,v){
+    [[1,v],[2,v*.2]].forEach(function(h){
+      var o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.value=f*h[0];
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(h[1],t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+      o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05);
+    });
+  }
+  function pad(f,t,d,v){
+    var o=ctx.createOscillator(),g=ctx.createGain();o.type="triangle";o.frequency.value=f;
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.6);g.gain.linearRampToValueAtTime(v,t+d-.3);g.gain.linearRampToValueAtTime(0,t+d+.5);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.6);
+  }
+  function violin(f,t,d,v,att){
+    var lp=ctx.createBiquadFilter(),g=ctx.createGain(),l=ctx.createOscillator(),lg=ctx.createGain();
+    lp.type="lowpass";lp.frequency.setValueAtTime(900,t);lp.frequency.linearRampToValueAtTime(2600,t+att+.1);lp.Q.value=1.2;
+    l.frequency.value=5.6;lg.gain.setValueAtTime(0,t);lg.gain.linearRampToValueAtTime(f*.0085,t+Math.min(.5,d*.6));l.connect(lg);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+att);g.gain.setTargetAtTime(v*.85,t+att,.3);g.gain.setTargetAtTime(0,t+d-.1,.08);
+    [-5,5].forEach(function(c){
+      var o=ctx.createOscillator();o.type="sawtooth";o.frequency.value=f;o.detune.value=c;lg.connect(o.frequency);
+      o.connect(lp);o.start(t);o.stop(t+d+.5);
+    });
+    lp.connect(g);g.connect(master);l.start(t);l.stop(t+d+.5);
+  }
+  function playBar(){
+    if(!playing)return;
+    if(ctx.state!=="running"){timer=setTimeout(playBar,300);return}
+    var i=bar%8,t=ctx.currentTime+.05,c=ch[i],E=C/8,flow=Math.floor(bar/8)%2===1;
+    pad(bs[i],t,C,.3);pad(c[0]/2,t,C,.14);
+    pat.forEach(function(k,j){harp(c[k],t+j*E,E*5,.12)});
+    if(!flow){violin(mel[i],t,C,.14,.35)}
+    else{run[i].forEach(function(f,j){violin(f,t+j*C/4,C/4+.12,.13,.07)})}
+    bar++;timer=setTimeout(playBar,C*1000);
+  }
+  function start(){
+    if(playing)return;
+    if(song&&!songBad){playing=true;btn.classList.add("on");var pr=song.play();if(pr&&pr.catch)pr.catch(function(){playing=false;btn.classList.remove("on")});return}
+    if(!ctx)init();
+    if(ctx.state==="suspended"){try{ctx.resume()}catch(e){}}
+    playing=true;btn.classList.add("on");playBar();
+  }
+  function stop(){if(song)song.pause();playing=false;clearTimeout(timer);btn.classList.remove("on")}
+  window.__startMusic=function(){if(!stopped){start();if(ctx&&ctx.state==="suspended")ctx.resume()}};
+  btn.addEventListener("click",function(e){e.stopPropagation();if(playing){stopped=true;stop()}else{stopped=false;start();if(ctx)ctx.resume()}});
+  var evs=["click","touchend","pointerup","keydown"],hint=document.getElementById("mushint");
+  function unlock(e){
+    if(stopped)return;
+    if(e&&e.target&&e.target.closest&&e.target.closest("#mus"))return;
+    try{start();if(song&&!songBad){if(!song.paused){evs.forEach(function(n){document.removeEventListener(n,unlock,true)});if(hint)hint.style.display="none"}return}if(ctx.resume)ctx.resume().then(function(){if(ctx.state==="running"){evs.forEach(function(n){document.removeEventListener(n,unlock,true)});if(hint)hint.style.display="none"}})}catch(x){}
+  }
+  evs.forEach(function(n){document.addEventListener(n,unlock,true)});
+  setTimeout(function(){if(hint&&(!ctx||ctx.state!=="running")&&!stopped)hint.style.opacity=1},900);
+  setInterval(function(){if(hint&&ctx&&ctx.state==="running")hint.style.display="none"},1000);
+  try{start()}catch(e){}
+  document.addEventListener("visibilitychange",function(){if(!ctx||!playing)return;document.hidden?ctx.suspend():ctx.resume()});
+})()}catch(e){}
+</script>
+</body>
+</html>
