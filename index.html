@@ -145,17 +145,6 @@ footer{padding:40px 20px 50px;text-align:center;color:var(--soft);font-size:.95r
   <p class="rv r dlay1 inv">Сиздерди балдарыбыз НУРЖИГИТ менен АЙНИСАнын үйлөнүү үлпөт тоюна келип, кадырлуу коногубуз болуп кетүүгө чакырабыз!</p>
 </section>
 
-<div class="rings" id="rings"><div class="stick">
-<svg class="rsvg" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeab0"/><stop offset=".3" stop-color="#e2b861"/><stop offset=".55" stop-color="#a9772a"/><stop offset=".8" stop-color="#e9c777"/><stop offset="1" stop-color="#8a5f1f"/></linearGradient>
-<linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#cfe6f5"/><stop offset="1" stop-color="#8fb9d6"/></linearGradient>
-<linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2788a"/><stop offset="1" stop-color="#b8283f"/></linearGradient>
-<filter id="sh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#5b3a10" flood-opacity=".4"/></filter>
-<clipPath id="cp"><rect x="0" y="-90" width="90" height="90"/></clipPath></defs>
-<g id="rL" transform="translate(162 170)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/><g transform="translate(0 -70)"><path d="M-6 6 L6 6 L10 -4 L-10 -4Z" fill="#a97a2c"/><path d="M-11 -4 L-6 -14 L6 -14 L11 -4 L0 14Z" fill="url(#gm)" stroke="#9fc4de" stroke-width=".8"/><path d="M-6 -14 L-2 -4 L0 14 L2 -4 L6 -14 M-11 -4 L11 -4" fill="none" stroke="#fff" stroke-width=".7" opacity=".9"/></g></g><g id="rR" transform="translate(238 170)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/></g><g id="rLt" transform="translate(162 170)"><g clip-path="url(#cp)"><circle r="62" fill="none" stroke="#6d4812" stroke-width="16"/><circle r="62" fill="none" stroke="url(#gd)" stroke-width="12.5"/><circle r="62" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="62 330" transform="rotate(200) scale(1.02)"/><circle r="57" fill="none" stroke="#8a5f1f" stroke-opacity=".6" stroke-width="1.5"/></g></g>
-<g id="hrt" transform="translate(200 58) scale(1.7)"><path d="M0 12 C-30 -12 -26 -38 -10 -38 C-4 -38 0 -32 0 -28 C0 -32 4 -38 10 -38 C26 -38 30 -12 0 12Z" fill="url(#hg)"/><path d="M-17 -30 C-22 -24 -21 -16 -16 -12" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round"/></g></svg>
-<div class="rtext" id="rtext"><h2>Эки жүрөк — бир жашоо</h2><p>Бул бактылуу күндү сиздер менен бирге белгилегибиз келет</p></div><div class="hint" id="hint">Улантуу үчүн төмөн жылдырыңыз ↓</div>
-</div></div>
-
 <section>
   <h2 class="rv r">Тойго чейин:</h2>
   <div class="cd rv l dlay1">
@@ -227,30 +216,6 @@ var pw=document.getElementById("petals");
 for(var i=0;i<10;i++){var p=document.createElement("div");p.className="petal";
   p.style.left=Math.random()*100+"%";p.style.animationDuration=(8+Math.random()*8)+"s";
   p.style.animationDelay=(-Math.random()*12)+"s";pw.appendChild(p)}
-
-// rings
-try{(function(){
-  var g=function(i){return document.getElementById(i)};
-  var box=g("rings"),L=g("rL"),Lt=g("rLt"),R=g("rR"),H=g("hrt"),T=g("rtext"),K=g("hint"),hs=0;
-  var run=false;
-  function frame(){
-    if(!run)return;
-    var r=box.getBoundingClientRect(),vh=innerHeight;
-    var q=Math.min(1,Math.max(0,(vh-r.top)/(vh*.95)));
-    var e=1-Math.pow(1-q,3),d=150-112*e,rot=(1-e)*70;
-    var tl="translate("+(200-d)+" 170) rotate("+(-rot)+")";
-    L.setAttribute("transform",tl);Lt.setAttribute("transform",tl);
-    R.setAttribute("transform","translate("+(200+d)+" 170) rotate("+rot+")");
-    hs+=((q>=.97?1:0)-hs)*.07;
-    var b=1+.07*Math.sin(Date.now()/280);
-    H.setAttribute("transform","translate(200 58) scale("+(hs*1.7*b)+")");
-    H.setAttribute("opacity",Math.min(1,hs*1.4));
-    T.style.opacity=hs;T.style.transform="translateY("+((1-hs)*20)+"px)";
-    K.style.opacity=hs>.8?1:0;
-    requestAnimationFrame(frame);
-  }
-  if("IntersectionObserver" in window){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!run){run=true;frame()}else if(!v){run=false}},{rootMargin:"60px"}).observe(box)}else{run=true;frame()}
-})()}catch(e){}
 
 // music: piano, Pachelbel's Canon in D (public domain), synthesized in the browser
 try{(function(){
